@@ -61,7 +61,7 @@
 			for (let i = 0; i < 5; i++) {
 				// Convert input to lowercase to allow case-insensitive comparison
 				let player = prompt("Choose your weapon").toLowerCase();
-				let result = playRound(player, "rock");
+				let result = playRound(player, computerPlay());
 				if (result == 0) {
 					computerPoints++;
 				}
