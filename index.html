@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Rock, Paper, Scissors, Shoot!</title>
+</head>
+<body>
+	<script type="text/javascript">
+		function computerPlay() {
+			// Random number between 1 and 3 to randomly select an object for the computer
+			let selection = Math.floor(Math.random() * 3);
+
+			if (selection == 0) {
+				return "rock";
+			}
+			else if (selection == 1) {
+				return "paper";
+			}
+			return "scissors";
+		}
+
+		function playRound(playerSelection, computerSelection) {
+			// Compare the two selections and determine winner
+			switch (true) {
+				case playerSelection == "rock" && computerSelection == "paper":
+				console.log("You lose! Paper beats Rock");
+				return 0;
+
+				case playerSelection == "scissors" && computerSelection == "paper":
+				console.log("You win! Scissors beats Paper");
+				return 1;
+
+				case playerSelection == "paper" && computerSelection == "rock":
+				console.log("You win! Paper beats Rock");
+				return 1;
+
+				case playerSelection == "scissors" && computerSelection == "rock":
+				console.log("You lose! Rock beats Scissors");
+				return 0;
+
+				case playerSelection == "rock" && computerSelection == "scissors":
+				console.log("You win! Rock beats Scissors");
+				return 1;
+
+				case playerSelection == "paper" && computerSelection == "scissors":
+				console.log("You lose! Scissors beats Paper");
+				return 0;
+
+				case playerSelection === computerSelection:
+				console.log("Tie!");
+				break;
+
+				default:
+				console.log("That's not an option in this game!");
+				break;
+			}
+		}
+
+		function game() {
+			let playerPoints = 0;
+			let computerPoints = 0;
+			for (let i = 0; i < 5; i++) {
+				// Convert input to lowercase to allow case-insensitive comparison
+				let player = prompt("Choose your weapon").toLowerCase();
+				let result = playRound(player, "rock");
+				if (result == 0) {
+					computerPoints++;
+				}
+				else if (result == 1) {
+					playerPoints++;
+				}
+			}
+			(playerPoints > computerPoints) ? console.log("You Won!") : console.log("You lost. Maybe try again?");
+		}
+
+		game();
+
+	</script>
+</body>
