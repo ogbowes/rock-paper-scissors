@@ -2,7 +2,7 @@ A game of rock, paper, scissors played with the computer using JavaScript curren
 
 Skills demonstrated:
 
-- Basic JavaScript syntax and functionality (creating variables, functions, loops, if-else, switch, printing to the console, ? conditional operator)
+- Basic JavaScript syntax and functionality (creating variables, functions, loops, if-else, switch, dynamically change text content, event listeners)
 - Using logical statements and random numbers to create a simple, dynamic game
 - Using return values to pass to other functions
 - Using return values of functions to keep track of a state (in this case, to ultimately determine the winner of a game of rock, paper, scissors)
