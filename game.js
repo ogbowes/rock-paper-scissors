@@ -56,8 +56,9 @@ function game() {
 	const buttons = document.querySelectorAll('button');
 	buttons.forEach((button) => {
 		button.addEventListener('click', (e) => {
+			result.style.color = 'black';
 			let winner = playRound(e.srcElement.id, computerPlay());
-			
+
 			// Determine winner of round
 			if (winner == 0) {
 				computerPoints++;
@@ -70,11 +71,13 @@ function game() {
 			if (playerPoints == 5 || computerPoints == 5) {
 				if (playerPoints > computerPoints) {
 					result.textContent = ("You won!");
+					result.style.color = 'green';
 					computerPoints = 0;
 					playerPoints = 0;
 				} 
 				else {
 					result.textContent = ("You lost. Maybe try again?");
+					result.style.color = 'red';
 					computerPoints = 0;
 					playerPoints = 0;
 				}
